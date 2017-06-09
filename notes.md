@@ -8,3 +8,8 @@
 7. Put wifi credentials into ino file
 8. Upload to Sparkfun Thing dev board 
 9. Check azure web app to see if data is coming through
+
+Deploy to Azure button is ready to copy paste below:
+
+
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](http://azuredeploy.net/?repository=https://github.com/noopkat/connectthedots/raw/IoTHubManagement/Azure/ARMTemplate)
