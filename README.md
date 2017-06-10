@@ -138,7 +138,13 @@ You should see some keys and other information. The specific item you'll want to
 
 So what's all this about? The device you just created in the IoT Hub represents your SparkFun Thing Dev board. We have told the IoT Hub about the board, and have generated some credentials for the SparkFun Thing Dev board to use when communicating with the IoT Hub. Hooray!
 
+## Connect the Humidity Sensor to the SparkFun Thing Dev
 
+You'll need your breadboard, a 10k Ohm resistor, the humidity sensor (the weird white waffle box), and 3 jumper wires. The signal wire of the sensor will need to be connected to pin 4. See the diagram below for how to connect the signal, ground and power pins along with the resistor:
+
+![breadboard](./diagrams/breadboard.png)
+
+If your breadboard looks just like the above diagram, you're good to go! Onto the next step.
 
 ## Modify the Code
 
