@@ -74,17 +74,79 @@ If you have an active Azure account then you may skip this step.
 
 ![Microsoft Azure Signup Page](./images/azure_pass_signup.png)
 
-## Deploy to Azure (TBA)
-## fixme - should have explanation of what deploy script is actually doing ##
+## Deploy Services to Azure 
+
+Once your Azure account is set up (and you're logged in!), you can go ahead and click the following magical 'Deploy to Azure' button:
+
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](http://azuredeploy.net/?repository=https://github.com/noopkat/connectthedots/raw/IoTHubManagement/Azure/ARMTemplate)
+
+Fill in the details asked in the form that loads. Accepting the defaults suggested should be fine, but it's important to ensure that:
+
+1. **IoT Hub Sku** is set to 'S1'. This is to make sure we have enough messaging allowance for today's workshop.
+2. **Solution Name** - this will be used to name all of the deployed services, so make it unique but be creative!
+3. **Admin Name** - who do you want to be? Zordon? Superman? WonderWoman?
+
+See the example screenshot below:
+
+![Deploy to Azure Page](./images/deploy_to_azure.png)
+
+Clicking 'Next' will validate your options and if all goes well, will also start deploying some services to your Azure account! This might take a while, so perhaps grab a coffee, or read the next steps to get familiar with them.
+
+### Summary
+
+What just happened on Azure? That magical 'Deploy to Azure' button took a special 'recipe' file called an ARM Template, and deployed all the services necessary for our IoT Adventure to work as expected. Let's take a look at each one:
+
+#### fixme: explain each one in one line
+#### fixme: draw an architecture diagram maybe
+
+1. IoT Hub
+2. Stream Analytics job
+3. Event Hub
+4. Storage Account
+5. Web App Service
+6. App Service Plan
 
 ## Create a new IoT Hub Device
 
+Once the deployment is complete, [visit the Azure Portal](https://portal.azure.com) to see your shiny new services listed in your resources. 
 
-## Modify the Code (fix me - reference since ripped from https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266/ESP8266_setup.md for now)
-- In the connect_the_dots.ino file, look for the following lines of code:
+Click on the IoT Hub service in the list.
 
-```
+![Azure resources](./images/resource_group.png)
+
+We're going to create our first device in your IoT Hub! Click on 'Device Explorer'.
+
+![Azure resources](./images/hub_new_device.png)
+
+Next, click on the 'Add' button to start creating your device:
+
+![Azure resources](./images/hub_add_device.png)
+
+On the new blade that opened, come up with a name for your device, and then click 'Save' at the bottom of the blade.
+
+![Azure resources](./images/hub_save_new_device.png)
+
+Once saved, you'll see your device appear in the list of devices in the Device Explorer. Click on your new device.
+
+![Azure resources](./images/hub_select_device.png)
+
+You should see some keys and other information. The specific item you'll want to make a note of is the Primary Connection String. Copy that string, and paste it somewhere safe to access it easier in the next steps.
+
+![Azure resources](./images/hub_copy_device_conn_string.png)
+
+### Summary
+
+So what's all this about? The device you just created in the IoT Hub represents your SparkFun Thing Dev board. We have told the IoT Hub about the board, and have generated some credentials for the SparkFun Thing Dev board to use when communicating with the IoT Hub. Hooray!
+
+
+
+## Modify the Code
+
+Okay! We're finally ready to code the device! For your convenience, we have placed in this repository an Arduino sketch file for you, from the [Connect the Dots](https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266) project. You should be able to find it in the `sketch` of this repository. Open the `connect_the_dots.ino` file in the Arduino IDE. You'll see the file as well as two others open in tabs within the IDE. We're ready to code!
+
+- In the `connect_the_dots.ino` file, look for the following lines of code:
+
+```c
 static char ssid[] = "[Your WiFi network SSID or name]";
 static char pass[] = "[Your WiFi network WPA password or WEP key]";
 ```
@@ -92,12 +154,12 @@ static char pass[] = "[Your WiFi network WPA password or WEP key]";
 - Replace the placeholders with your WiFi name (SSID), WiFi password, and the device connection string you created at the beginning of this tutorial. Save with `Control-s`
 - Open up the file `connect_the_dots.cpp`. Look for the following lines of code and replace the placeholders connection information (this is the Device information that you've created when adding a new device id in the IoT Hub device registry):
 
-```
+```c
 static const char* deviceId = "[deviceid]";
 static const char* connectionString = "[connectionstring]";
 ```
 
-- You can also change the location, organization and displayname values to the ones of your choice
+- You can also change the location, organization and displayname values to the ones of your choice. Be creative!
 - Save all changes
 
 ### Compile and deploy the sample
