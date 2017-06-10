@@ -148,7 +148,7 @@ If your breadboard looks just like the above diagram, you're good to go! Onto th
 
 ## Modify the Code
 
-Okay! We're finally ready to code the device! For your convenience, we have placed in this repository an Arduino sketch file for you, from the [Connect the Dots](https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266) project. You should be able to find it in the `sketch` of this repository. Open the `connect_the_dots.ino` file in the Arduino IDE. You'll see the file as well as two others open in tabs within the IDE. We're ready to code!
+Okay! We're finally ready to code the device! For your convenience, we have placed in this repository an Arduino sketch file for you, from the [Connect the Dots](https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266) project. You should be able to find it in the [`sketch` directory of this repository](./sketch). Open the `connect_the_dots.ino` file in the Arduino IDE. You'll see the file as well as two others open in tabs within the IDE. We're ready to code!
 
 - In the `connect_the_dots.ino` file, look for the following lines of code:
 
