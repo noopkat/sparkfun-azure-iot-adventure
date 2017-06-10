@@ -41,8 +41,8 @@ static WiFiSSLClient sslClient;
 
 #include "connect_the_dots.h"
 
-static char ssid[] = "";
-static char pass[] = "";
+static char ssid[] = "[Your WiFi network SSID or name]";
+static char pass[] = "[Your WiFi network WPA password or WEP key]";
 
 /*
  * The new version of AzureIoTHub library change the AzureIoTHubClient signature.

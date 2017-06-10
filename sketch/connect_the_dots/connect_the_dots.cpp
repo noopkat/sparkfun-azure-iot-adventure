@@ -17,11 +17,12 @@ StaticJsonBuffer<JSON_BUFFER_SIZE> jsonBuffer;
 DHT dht(DHTPIN, DHTTYPE);
 
 // Find under Microsoft Azure IoT Hub -> DEVICES -> <your device> -> Device Details and Authentication Keys
-static const char* deviceId = "";
-static const char* connectionString = "";
+static const char* deviceId = "[deviceid]";
+static const char* connectionString = "[connection string]";
 
 static const char* organization = "Acme Inc";
 static const char* location = "Secret Lair";
+
 static const char* tempMeasureName = "Temperature";
 static const char* tempUnitOfMeasure = "C";
 static const char* hmdtMeasureName = "Humidity";
