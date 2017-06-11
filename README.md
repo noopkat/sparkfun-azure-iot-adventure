@@ -96,15 +96,14 @@ Clicking 'Next' will validate your options and if all goes well, will also start
 
 What just happened on Azure? That magical 'Deploy to Azure' button took a special 'recipe' file called an ARM Template, and deployed all the services necessary for our IoT Adventure to work as expected. Let's take a look at each one:
 
-#### fixme: explain each one in one line
-#### fixme: draw an architecture diagram maybe
+1. **IoT Hub** - messaging broker that the SparkFun Thing Dev will post sensor data to
+2. **Stream Analytics job** - aggregates data in realtime from multiple sensors and devices into data "windows"
+3. **Event Hub** - takes aggregate data output from Stream Analytics and posts to any listeners
+4. **Storage Account** - stores Event Hub data output
+5. **Web App Service** - runs a web application to display the sensor data in graphical form, in realtime
+6. **App Service Plan** - defines the scale and attributes of the Web App Service (ie. payment tier)
 
-1. IoT Hub
-2. Stream Analytics job
-3. Event Hub
-4. Storage Account
-5. Web App Service
-6. App Service Plan
+Ready? Okay! On to creating a new device your the IoT Hub.
 
 ## Create a new IoT Hub Device
 
