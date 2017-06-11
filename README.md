@@ -178,3 +178,6 @@ At this point your device should connect to Azure IoT Hub and start sending tele
 ![Web App URL in Azure](./images/find_app_url.png)
 
 
+## References
+
+This workshop made heavy use of the Connect the Dots project; specifically, the [Arduino / ESP8266 setup](https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266/ESP8266_setup.md) portions were used. Thank you to the [authors and contributors](https://github.com/Azure/connectthedots/graphs/contributors).
