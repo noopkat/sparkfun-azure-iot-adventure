@@ -173,8 +173,8 @@ static const char* connectionString = "[connectionstring]";
 - Select the COM port on the Arduino IDE. Use **Tools -&gt; Port -&gt; COM** to select it.
 - Use **Sketch -&gt;  Upload** on Arduino IDE to compile and upload to the device.
 
-At this point your device should connect to Azure IoT Hub and start sending telemetry data to your ConnectTheDots solution.
+At this point your device should connect to Azure IoT Hub and start sending telemetry data to your Connect The Dots app. To find the URL of your deployed Web App, click on the Web App Service in your Azure Portal resource list and the URL will be shown on the 'Overview' blade:
 
-## References (notes for now)
-Arduino / ESP8266 setup portions from the ctd doc
-https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266/ESP8266_setup.md
+![Web App URL in Azure](./images/find_app_url.png)
+
+
