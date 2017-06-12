@@ -56,7 +56,6 @@ Since the Board Support Package is installed our development environment we can 
 ![Arduino Board Selection](./images/arduino_board_selection.png)
 
 ## :books: Install Library Dependencies :books:
-Open the file Devices\DirectlyConnectedDevices\ESP8266\connect_the_dots\connect_the_dots.ino in the Arduino IDE.
 
 For this project, we'll  need the below libraries. To install them, click on the `Sketch -> Include Library -> Manage Libraries`. Search for each library using the box in the upper-right to filter your search, click on the found library, and click the "Install" button. 
 
