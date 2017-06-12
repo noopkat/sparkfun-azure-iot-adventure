@@ -36,7 +36,7 @@ We'll need to set up the Arduino IDE to match our hardware download some librari
 
 Open up your SparkFun box and insert the ESP8266 module into the breadboard as shown.
 ![ESP8266 Setup](./images/esp8266_turn_on.png)
-Plug in your SparkFun Think ESP8266 to an available USB port using the provided cable and turn the power ON by using the indicated switch on the device. The power LED indicator should light red.
+Plug in your SparkFun Thing ESP8266 to an available USB port using the provided cable and turn the power ON by using the indicated switch on the device. The power LED indicator should light red.
 
 ### Install ESP8266 Board Support Package
 Since the ESP8266 is a relatively new device we'll need to install some optional packages to instruct the Arduino environment on how to compile/program the board.
@@ -64,14 +64,14 @@ We'll be using specific versions of the Azure tools for this project, please mak
  - DHT Sensor Library *(latest)*
  - Adafruit Unified Sensor *(latest)*
  - ArduinoJSON *(latest)*
- - AzureIoTHub *(1.0.17)*
- - AzureIoTUtility *(1.0.17)*
- - AzureIoTProtocol_MQTT *(1.0.17)*
+ - AzureIoTHub *(1.0.30)*
+ - AzureIoTUtility *(1.0.30)*
+ - AzureIoTProtocol_MQTT *(1.0.30)*
 
 ![Install Specific Versions of Libraries](./images/arduino_library_version.png)
 
 ## :gem: Create an Azure Account :gem:
-If you are taking this workshop in person you should have received a pass with $50 worth of Azure credit to get you started. You may need to create a Microsoft account at this point if you don't already have one. 
+If you are taking this workshop in person you should have received a pass with $50 worth of Azure credit to get you started. You may need to create a Microsoft account at this point if you don't already have one. You can activate your credit by going to the Microsoft Azure Pass website: [https://www.microsoftazurepass.com/](https://www.microsoftazurepass.com/).
 
 If you have an active Azure account then you may skip this step.
 
@@ -159,7 +159,7 @@ static char ssid[] = "[Your WiFi network SSID or name]";
 static char pass[] = "[Your WiFi network WPA password or WEP key]";
 ```
 
-- Replace the placeholders with your WiFi name (SSID), WiFi password, and the device connection string you created at the beginning of this tutorial. Save with `Control-s`
+- Replace the placeholders with your WiFi name (SSID) and WiFi password. Save with `Control-s`
 - Open up the file `connect_the_dots.cpp`. Look for the following lines of code and replace the placeholders connection information (this is the Device information that you've created when adding a new device id in the IoT Hub device registry):
 
 ```c
@@ -173,6 +173,10 @@ static const char* connectionString = "[connectionstring]";
 ### :up::chart_with_upwards_trend: Compile and deploy the sample :chart_with_upwards_trend::up:
 
 - Select the COM port on the Arduino IDE. Use **Tools -&gt; Port -&gt; COM** to select it.
+- If using Mac you will need to edit ~/Documents/Arduino/libraries/AzureIoTUtility/src/azure_c_shared_utility/xlogging.h and add the following line to the top of the file:
+```c
+#define NO_LOGGING
+```
 - Use **Sketch -&gt;  Upload** on Arduino IDE to compile and upload to the device.
 
 At this point your device should connect to Azure IoT Hub and start sending telemetry data to your Connect The Dots app. To find the URL of your deployed Web App, click on the Web App Service in your Azure Portal resource list and the URL will be shown on the 'Overview' blade:
