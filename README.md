@@ -2,7 +2,11 @@
 ✨🎉🌦⚡🌠
 ## Introduction
 
-## Install Software
+Thanks for joining this workshop! Today's gonna be super fun. You'll put together a basic breadboard which will communicate with a webpage to display sensor data. There are a lot of moving pieces, but your workshop guides are here to help if you get stuck. We recommend following the steps in order, however if you're waiting on downloads to finish feel free to read ahead to get familiar with what you need to do next.
+
+We're glad you're on board! Follow the steps below to get started :sparkles:
+
+## :computer: Install Software :computer: 
 
 [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -16,7 +20,7 @@ The Arduino IDE allows us to develop and program new firmware to the embedded de
 
 Git is a free and open source distributed version control system, we'll be using it today to pull down baseline code which we'll modify to fit your project.
 
-### Download the Repository
+### :arrow_down: Download the Repository :arrow_down:
 [ConnectTheDots.io](https://github.com/Azure/connectthedots) is an open source project created by Microsoft to help you get tiny devices connected to Microsoft Azure IoT and to implement IoT solutions that take advantage of Microsoft Azure and IoT Hub.
 
 Open up a command prompt / terminal window, navigate to the desired directory for the the project and run the following command to pull down the repository:
@@ -27,14 +31,14 @@ Git is highly recommended since it is easy to track your modifications to your p
 
 [https://github.com/noopkat/sparkfun-azure-iot-adventure/archive/master.zip](https://github.com/noopkat/sparkfun-azure-iot-adventure/archive/master.zip)
 
-## Setup Software / Board Support Package
+## :package: Setup Software / Board Support Package :package:
 We'll need to set up the Arduino IDE to match our hardware download some libraries to start interacting with Azure / IoT Hub.
 
 Open up your SparkFun box and insert the ESP8266 module into the breadboard as shown.
 ![ESP8266 Setup](./images/esp8266_turn_on.png)
 Plug in your SparkFun Think ESP8266 to an available USB port using the provided cable and turn the power ON by using the indicated switch on the device. The power LED indicator should light red.
 
-## Install ESP8266 Board Support Package
+### Install ESP8266 Board Support Package
 Since the ESP8266 is a relatively new device we'll need to install some optional packages to instruct the Arduino environment on how to compile/program the board.
 
 Open up the Arduino IDE and select `File->Preferences` to open up the preferences window and paste the following URL.
@@ -51,7 +55,7 @@ Since the Board Support Package is installed our development environment we can 
 
 ![Arduino Board Selection](./images/arduino_board_selection.png)
 
-## Install Library Dependencies
+## :books: Install Library Dependencies :books:
 Open the file Devices\DirectlyConnectedDevices\ESP8266\connect_the_dots\connect_the_dots.ino in the Arduino IDE.
 
 For this project, we'll  need the below libraries. To install them, click on the `Sketch -> Include Library -> Manage Libraries`. Search for each library using the box in the upper-right to filter your search, click on the found library, and click the "Install" button. 
@@ -67,14 +71,14 @@ We'll be using specific versions of the Azure tools for this project, please mak
 
 ![Install Specific Versions of Libraries](./images/arduino_library_version.png)
 
-## Create an Azure Account
+## :gem: Create an Azure Account :gem:
 If you are taking this workshop in person you should have received a pass with $50 worth of Azure credit to get you started. You may need to create a Microsoft account at this point if you don't already have one. 
 
 If you have an active Azure account then you may skip this step.
 
 ![Microsoft Azure Signup Page](./images/azure_pass_signup.png)
 
-## Deploy Services to Azure 
+## :truck: Deploy Services to Azure :truck:
 
 Once your Azure account is set up (and you're logged in!), you can go ahead and click the following magical 'Deploy to Azure' button:
 
@@ -105,7 +109,7 @@ What just happened on Azure? That magical 'Deploy to Azure' button took a specia
 
 Ready? Okay! On to creating a new device your the IoT Hub.
 
-## Create a new IoT Hub Device
+## :key: Create a new IoT Hub Device :key:
 
 Once the deployment is complete, [visit the Azure Portal](https://portal.azure.com) to see your shiny new services listed in your resources. 
 
@@ -137,7 +141,7 @@ You should see some keys and other information. The specific item you'll want to
 
 So what's all this about? The device you just created in the IoT Hub represents your SparkFun Thing Dev board. We have told the IoT Hub about the board, and have generated some credentials for the SparkFun Thing Dev board to use when communicating with the IoT Hub. Hooray!
 
-## Connect the Humidity Sensor to the SparkFun Thing Dev
+## :partly_sunny: Connect the Humidity Sensor to the SparkFun Thing Dev :partly_sunny:
 
 You'll need your breadboard, a 10k Ohm resistor, the humidity sensor (the weird white waffle box), and 3 jumper wires. The signal wire of the sensor will need to be connected to pin 4. See the diagram below for how to connect the signal, ground and power pins along with the resistor:
 
@@ -145,7 +149,7 @@ You'll need your breadboard, a 10k Ohm resistor, the humidity sensor (the weird 
 
 If your breadboard looks just like the above diagram, you're good to go! Onto the next step.
 
-## Modify the Code
+## :memo: Modify the Code :memo:
 
 Okay! We're finally ready to code the device! For your convenience, we have placed in this repository an Arduino sketch file for you, from the [Connect the Dots](https://github.com/Azure/connectthedots/blob/master/Devices/DirectlyConnectedDevices/ESP8266) project. You should be able to find it in the [`sketch` directory of this repository](./sketch). Open the `connect_the_dots.ino` file in the Arduino IDE. You'll see the file as well as two others open in tabs within the IDE. We're ready to code!
 
@@ -167,7 +171,7 @@ static const char* connectionString = "[connectionstring]";
 - You can also change the location, organization and displayname values to the ones of your choice. Be creative!
 - Save all changes
 
-### Compile and deploy the sample
+### :up::chart_with_upwards_trend: Compile and deploy the sample :chart_with_upwards_trend::up:
 
 - Select the COM port on the Arduino IDE. Use **Tools -&gt; Port -&gt; COM** to select it.
 - Use **Sketch -&gt;  Upload** on Arduino IDE to compile and upload to the device.
